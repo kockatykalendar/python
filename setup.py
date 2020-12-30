@@ -1,20 +1,14 @@
-import io
 import os
-import re
 
 from setuptools import find_packages
 from setuptools import setup
 
-
-def read(filename):
-    filename = os.path.join(os.path.dirname(__file__), filename)
-    with io.open(filename, mode="r", encoding='utf-8') as fd:
-        return fd.read()
-
+with open("README.rst", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
 setup(
     name="kockatykalendar",
-    version="0.1.0",
+    version="0.1.1",
     url="https://github.com/kockatykalendar/python",
     license='MIT',
 
@@ -22,12 +16,12 @@ setup(
     author_email="adam@zahradnik.xyz",
 
     description="API, tools and utilities for working with KockatyKalendar.sk",
-    long_description=read("README.md"),
+    long_description=long_description,
 
     packages=find_packages(exclude=('tests',)),
 
     install_requires=[],
-    extras_requires={
+    extras_require={
         "django": ["django>=1.7"],
         "api": ["requests>=2.0.0"]
     },
