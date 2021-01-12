@@ -42,6 +42,7 @@ v kalendári ale aj ich tvorbu.
     from kockatykalendar.events import Event, EventType, EventScience, EventContestant
 
     event = Event()
+    event._id = "ksp-sus-1"
     event.name = "KSP sústredenie"
     event.type = EventType.SUSTREDENIE
     event.sciences = [EventScience.INF]
@@ -105,6 +106,7 @@ V prípade Djanga si stačí zadefinovať jeden alebo viac generátorov, ktoré 
 
         def event(self, item):
             return Event(
+                _id="seminar-%d" % item.id,
                 name=item.name,
                 sciences=[EventScience.MAT],
                 type=EventType.SEMINAR,

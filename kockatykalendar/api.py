@@ -33,22 +33,16 @@ def get_available_datasets() -> List[Dataset]:
 
 def get_current_dataset() -> Dataset:
     """
-    Predicts dataset of current school year.
-    Should be accurate, however we recommend using get_available_datasets() and choosing
-    a dataset from there, as it is based on real dataset index.
-    :return: Predicted current school year dataset
+    Gets dataset of current school year.
+    :return: Current school year dataset
     """
     today = date.today()
     current_school_year = today.year if today.month >= 9 else today.year - 1
-    school_year = "%d/%d" % (current_school_year, current_school_year + 1),
-    filename = "%d_%d.json" % (current_school_year, (current_school_year + 1) % 100),
 
-    return Dataset({
-        "start_year": current_school_year,
-        "end_year": current_school_year + 1,
-        "school_year": school_year,
-        "filename": filename
-    })
+    datasets = get_available_datasets()
+    for dataset in datasets:
+        if dataset.start_year == current_school_year:
+            return dataset
 
 
 def get_events(dataset) -> List[Event]:
