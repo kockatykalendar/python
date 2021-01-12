@@ -5,7 +5,7 @@ KockatýKalendár Python
     :target: https://pypi.python.org/pypi/kockatykalendar
     :alt: Latest PyPI version
 
-API, nástroje a utiltky pre prácu a integráciu s Kockatým Kalendárom pre Python.
+API, nástroje a utilitky pre prácu a integráciu s Kockatým Kalendárom pre Python.
 
 Inštalácia
 ----------
@@ -49,7 +49,7 @@ v kalendári ale aj ich tvorbu.
     event.date.start = date(2020, 12, 13)
     event.date.end = date(2020, 12, 20)
     event.contestants.min = EventContestant(EventContestant.SchoolType.STREDNA, 1)
-    event.contestants.min = EventContestant(EventContestant.SchoolType.STREDNA, 4)
+    event.contestants.max = EventContestant(EventContestant.SchoolType.STREDNA, 4)
     event.places = ["TBD"]
     event.organizers = ["trojsten"]
     event.link = "https://ksp.sk/akcie/sustredenia/"
