@@ -5,7 +5,7 @@ KockatýKalendár Python
     :target: https://pypi.python.org/pypi/kockatykalendar
     :alt: Latest PyPI version
 
-API, nástroje a utiltky pre prácu a integráciu s Kockatým Kalendárom pre Python.
+API, nástroje a utilitky pre prácu a integráciu s Kockatým Kalendárom pre Python.
 
 Inštalácia
 ----------
