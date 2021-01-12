@@ -125,7 +125,7 @@ class Event:
             return Event.Contestants(json["min"], json["max"])
 
     def __init__(self, name="", sciences=[], type=None, oragnizers=[], places=[], volatile=False,
-                 cancelled=False, info=None, color=None, link=None, date=None, contestants=None):
+                 cancelled=False, info=None, color=None, link=None, date=None, contestants=None, _id=None):
         # required
         self.name = name
         self.sciences = sciences
@@ -147,6 +147,7 @@ class Event:
         self.link = link
         self.volatile = volatile
         self.cancelled = cancelled
+        self._id = _id
 
     def validate(self):
         if not self.name:
@@ -229,7 +230,8 @@ class Event:
             "info": self.info,
             "color": self.color,
             "volatile": self.volatile,
-            "cancelled": self.cancelled
+            "cancelled": self.cancelled,
+            "_id": self._id
         }
 
     @staticmethod
@@ -248,5 +250,6 @@ class Event:
         e.color = json["color"] if "color" in json else None
         e.volatile = json["volatile"] if "volatile" in json else False
         e.cancelled = json["cancelled"] if "cancelled" in json else False
+        e._id = json["_id"] if "_id" in json else None
 
         return e
