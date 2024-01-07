@@ -10,6 +10,7 @@ class EventScience(enum.Enum):
     FYZ = "fyz"
     INF = "inf"
     OTHER = "other"
+    ANY = "any"
 
 
 class EventType(enum.Enum):
