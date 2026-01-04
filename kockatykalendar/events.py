@@ -9,6 +9,8 @@ class EventScience(enum.Enum):
     MAT = "mat"
     FYZ = "fyz"
     INF = "inf"
+    CHEM = "chem"
+    BIO = "bio"
     OTHER = "other"
     ANY = "any"
 
@@ -243,7 +245,7 @@ class Event:
         e.type = EventType(json["type"])
         e.date = Event.Dates.from_json(json["date"])
         e.organizers = json["organizers"]
-        e.places = json["places"]
+        e.places = json.get("places", None)
         e.contestants = Event.Contestants.from_json(json["contestants"])
 
         e.link = json["link"] if "link" in json else None
